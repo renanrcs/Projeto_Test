@@ -9,6 +9,16 @@
 </head>
 <body>
 
+	<%! int contador = 1; %>
+	
+	<% if (contador == 1){
+			contador++; %>
+			
+		<h3>Essa é sua primeira visita, Seja bem vindo!!!</h3>
+		<% } else { %>
+		<h2>Essa é sua visita de numero <%= contador %></h2>
+		<% } %>
+
 	<% 
 	 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
      String dataFormatada = sdf.format(new Date());
