@@ -8,7 +8,13 @@
 <title>Projeto Teste</title>
 </head>
 <body>
-	<h3>A data de Hoje é: </h3>
-	<%= new Date() %>
+
+	<% 
+	 java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyy");
+     String dataFormatada = sdf.format(new java.util.Date());
+	 %>
+	
+	<h3>A data de Hoje é: <%= dataFormatada %> </h3>
+
 </body>
 </html>
