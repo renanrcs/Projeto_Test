@@ -75,5 +75,9 @@
 	 
 	 </c:choose>
 	 
+	 <c:forEach var="n" begin="90" end="${ numero - 1 }">
+	 	Intem: ${ n } <br>
+	 </c:forEach>
+	 
 </body>
 </html>
