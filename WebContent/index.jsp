@@ -1,6 +1,10 @@
+<jsp:useBean id="casa" class="aula.Casa" type="aula.Casa"/>
 <%@page import="java.util.*, java.text.*"%>
+<%@page import="aula.Casa" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +16,13 @@
 	<%! int contador = 1; %>
 	
 	<% if (contador == 1){
-			contador++; %>
+		contador++;
+			 %>
 			
-		<h3>Essa é sua primeira visita, Seja bem vindo!!!</h3>
+		<h3>Essa é sua Primeira visita, Seja bem vindo!!!</h3>
 		<% } else { %>
 		<h2>Essa é sua visita de numero <%= contador %></h2>
+		<% contador++; %>
 		<% } %>
 
 	<% 
@@ -25,6 +31,19 @@
 	 %>
 	
 	<h3>A data de Hoje é: <%= dataFormatada %> </h3>
+	
+	<%--Aqui vamos ver como funciona as tag JSTL--%>
+	
+	<%= casa.getClass() %> <br>
+	<jsp:setProperty property="*" name="casa"/>
+	<jsp:setProperty property="area" value="600" name="casa"/>
+	<jsp:setProperty property="qtdQuartos" value="5" name="casa"/>
+	
+	<jsp:getProperty property="name" name="casa"/> <br>
+	Area: <jsp:getProperty property="area" name="casa"/> <br>
+	Quantidade de Quartos: ${ casa.qtdQuartos } <br>
+	
+	<c:out value="${ 'Bem vindo ao JSTL' }"></c:out>
 
 </body>
 </html>
