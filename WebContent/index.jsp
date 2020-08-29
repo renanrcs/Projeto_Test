@@ -43,7 +43,10 @@
 	Area: <jsp:getProperty property="area" name="casa"/> <br>
 	Quantidade de Quartos: ${ casa.qtdQuartos } <br>
 	
-	<c:out value="${ 'Bem vindo ao JSTL' }"></c:out>
+	<c:out value="${ 'Bem vindo ao JSTL' }"></c:out> <br>
+	
+	<c:import var="page" url="http://leadfortaleza.com.br/portal"></c:import>
+	<c:out value="${ page }"></c:out> <br>
 
 </body>
 </html>
