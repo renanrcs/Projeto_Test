@@ -54,8 +54,26 @@
 	 </c:catch>
 	 
 	 <c:if test="${ erro != null }">
-	 	${ erro.message }
+	 	${ erro.message } <br>
 	 </c:if>
+	 
+	 <c:set var="numero" value="${ 100 }"/>
+	 
+	 <c:choose>
+	 	
+	 	<c:when test="${ numero > 50 }">
+	 		<c:out value="${ 'Numero é maior que 50' }"/> <br>
+	 	</c:when>
+	 	
+	 	<c:when test="${ numero < 50 }">
+	 		<c:out value="${ 'Numero é Menor do que 50' }"/> <br>
+	 	</c:when>
+	 	
+	 	<c:otherwise>
+	 		<c:out value="${ 'Numero é igual a 50' }"/> <br>
+	 	</c:otherwise>
+	 
+	 </c:choose>
 	 
 </body>
 </html>
