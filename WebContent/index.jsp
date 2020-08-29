@@ -45,8 +45,17 @@
 	
 	<c:out value="${ 'Bem vindo ao JSTL' }"></c:out> <br>
 	
-	<c:import var="page" url="http://leadfortaleza.com.br/portal"></c:import>
+	<%--<c:import var="page" url="http://leadfortaleza.com.br/portal"></c:import>
 	<c:out value="${ page }"></c:out> <br>
-
+	 --%>
+	 
+	 <c:catch var="erro">
+	 	<% int var=100/0; %>
+	 </c:catch>
+	 
+	 <c:if test="${ erro != null }">
+	 	${ erro.message }
+	 </c:if>
+	 
 </body>
 </html>
